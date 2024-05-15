@@ -7,14 +7,14 @@ spec:
   project: default
   sources:
     - repoURL: https://istio-release.storage.googleapis.com/charts
-      chart: istio/istio-base
+      chart: base
       targetRevision: 1.22.0
       helm:
         releaseName: istio-base
         valueFiles: 
          - $values/istio/values.yaml
     - repoURL: https://istio-release.storage.googleapis.com/charts
-      chart: istio/istiod
+      chart: istiod
       targetRevision: 1.22.0
       helm:
         releaseName: istiod
