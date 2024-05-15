@@ -6,15 +6,15 @@ metadata:
 spec:
   project: default
   sources:
-    - chart: istiod
-      repoURL: https://istio-release.storage.googleapis.com/charts
+    - repoURL: https://istio-release.storage.googleapis.com/charts
+      chart: istiod
       targetRevision: 1.22.0
-    helm:
-      releaseName: istio/istiod
-      valueFiles: $values/istio/values.yaml
-  - repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: HEAD
-    ref: values
+      helm:
+        releaseName: istio/istiod
+        valueFiles: $values/istio/values.yaml
+    - repoURL: {{ .Values.spec.source.repoURL }}
+      targetRevision: HEAD
+      ref: values
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: istio-system
