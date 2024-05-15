@@ -11,7 +11,8 @@ spec:
       targetRevision: 1.22.0
       helm:
         releaseName: istio/istiod
-        valueFiles: $values/istio/values.yaml
+        valueFiles: 
+         - $values/istio/values.yaml
     - repoURL: {{ .Values.spec.source.repoURL }}
       targetRevision: HEAD
       ref: values
