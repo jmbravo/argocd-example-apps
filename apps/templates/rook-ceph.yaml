@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rook-ceph
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: https://charts.rook.io/release
+      chart: rook-ceph
+      targetRevision: 1.14.3
+      helm:
+        releaseName: rook-ceph
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: rook-ceph
