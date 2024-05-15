@@ -17,10 +17,7 @@ spec:
       helm:
         releaseName: istiod
         valueFiles: 
-         - $values/istio/values.yaml
-    - repoURL: {{ .Values.spec.source.repoURL }}
-      targetRevision: HEAD
-      ref: values
+         - {{ .Values.spec.source.repoURL }}/istio/values.yaml
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: istio-system
