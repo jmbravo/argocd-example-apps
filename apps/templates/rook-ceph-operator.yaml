@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rook-ceph
+  name: rook-ceph-operator
   namespace: argocd
 spec:
   project: default
@@ -10,7 +10,7 @@ spec:
       chart: rook-ceph
       targetRevision: 1.14.3
       helm:
-        releaseName: rook-ceph
+        releaseName: rook-ceph-operator
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: rook-ceph
