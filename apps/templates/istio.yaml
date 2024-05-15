@@ -16,8 +16,6 @@ spec:
       targetRevision: 1.22.0
       helm:
         releaseName: istiod
-        valueFiles: 
-         - https://github.com/jmbravo/argocd-example-apps/blob/master/istio/values.yaml
   destination:
     server: {{ .Values.spec.destination.server }}
     namespace: istio-system
